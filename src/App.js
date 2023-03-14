@@ -1,7 +1,11 @@
+import Navbar from "./Components/Navbar";
+
 const App = () => {
   return (
-    <div className="App">
-    </div>
+    <>
+    {/* include Navbar component */}
+    <Navbar />
+    </>
   );
 }
 

@@ -1,0 +1,98 @@
+// Navbar component style sheet
+
+// import Mixins and Variables
+@import './Mixins.scss';
+@import './Vars.scss';
+
+//styles
+nav{
+    background-color: $dark;
+    width: 100%;
+    height: 60px;
+    @include center();
+    button{
+    display: none;  // show this button only on small screens
+    }
+    ul{
+        @include center();
+        width: 30%;
+        justify-content: space-between;
+        li{
+            transition: 0.3s;
+            list-style: none;
+            a{
+                color: $white;
+                text-decoration: none;
+                font-weight: bold;
+                font-style: 20px;
+            }
+            // add hover effect for Link
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+} 
+
+// Media querys for Navbar
+@media screen and (max-width: 640px) {
+nav{
+    position: fixed;
+    top:0;
+    width: 100%;
+    height: 60px;
+    button{
+        color: white;
+        background: none;
+        border: none;
+        display: block;
+        position: absolute;
+        top:10px;
+        right: 20px;
+        font-size: 36px;
+        padding: 0;
+    }
+    ul{
+        display: none;
+        width: 100%;
+        height: calc(100vh - 60px);
+        position: absolute;
+        bottom: 0;
+        background-color: $dark3;
+        flex-direction: column;
+        justify-content: center;
+        padding: 20px;
+        li{
+            // margin: 20px 0;
+            padding: 30px 30px;
+            font-size: 36px;
+        
+        }
+        li:nth-child(2){
+            // background-color: blue;
+            border-top: 3px solid $light;
+            border-bottom: 3px solid $light;
+        }
+    }
+}
+nav.active{
+    height: 100vh;
+    button{
+        top:7px;
+        right: 22px;
+        font-size: 42px;
+    }
+    ul{
+        display: block;
+        @include center();
+    }
+}
+}
+
+@media screen and (max-width: 1200px)and (min-width:640px){
+    nav{
+        ul{
+            width: 25%;
+        }
+    }
+}
