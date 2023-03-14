@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/kickertech-fe-test/static/css/main.5b67ac54.css",
+    "main.js": "/kickertech-fe-test/static/js/main.ce832390.js",
+    "index.html": "/kickertech-fe-test/index.html",
+    "main.5b67ac54.css.map": "/kickertech-fe-test/static/css/main.5b67ac54.css.map",
+    "main.ce832390.js.map": "/kickertech-fe-test/static/js/main.ce832390.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5b67ac54.css",
+    "static/js/main.ce832390.js"
+  ]
+}
