@@ -12,12 +12,14 @@ const Card = () => {
             </div>
         </div>
         <div className='bottom'>
-            <form>
-                <input type='text'></input>
-                <button type='submit'>submit</button>
-            </form>
-            <div className='comment'>
-
+            <Form />
+            <div className='comments'>
+                <Comment header={'Lorem Ipsum'} text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'}/>
+                <Comment header={'Lorem Ipsum'} text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'}/>
+                <Comment header={'Lorem Ipsum'} text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'}/>
+                <Comment header={'Lorem Ipsum'} text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'}/>
+                <Comment header={'Lorem Ipsum'} text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'}/>
+                <Comment header={'Lorem Ipsum'} text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'}/>
             </div>
         </div>
 
@@ -26,3 +28,24 @@ const Card = () => {
 }
 
 export default Card
+
+const Form = () =>{
+    return(
+    <form>
+        <input type='text' placeholder='Placeholder...'></input>
+        <button type='submit'>submit</button>
+    </form>
+    )
+}
+
+const Comment = (props) =>{
+    return(
+    <div className='comment'>
+        <div className='avatar'></div>
+        <div className='comment-text'>
+            <h3>{props.header}</h3>
+            <p>{props.text}</p>
+        </div>
+    </div>
+    )
+}

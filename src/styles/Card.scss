@@ -1,6 +1,8 @@
 @import './Vars.scss';
 @import './Mixins.scss';
 
+
+
 .card{
     display: flex;
     flex-direction: column;
@@ -33,5 +35,61 @@
         height: 30%;
         width: 100%;
         background-color: $dark;
+
+        border-radius: 0 0 $radius $radius;
+        overflow-y: scroll;
+        form{
+            padding: 0 35px;
+            margin-top: 5px;
+            display: flex;
+            width: 100%;
+            height: 40px;
+            input{
+                width: 100%;
+                color: $white;
+                background-color: $dark2;
+                border: none;
+                padding-left: 20px;
+                border-radius: 20px 0 0 20px;
+            }
+            button{
+                background-color: $dark3;
+                border: none;
+                padding: 0 20px;
+                border-radius:0 20px 20px 0;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
+        }
+        .comments{
+            width: 100%;
+            .comment{
+                width: 100%;
+                border-bottom: 1px solid $dark3;
+                padding: 20px 35px 10px;
+                display: flex;
+                flex-direction: row;
+                .avatar{
+                    border-radius: 50%;
+                    width: 40px;
+                    height: 40px;
+                    min-width: 40px;
+                    background-color: $dark3;
+                    margin: -5px 10px 10px 0;
+                }
+                .comment-text{
+                    width: 100%;
+                    p{
+                        margin-top: 5px;
+                        font-size: 12px;
+                    }
+                }
+                
+            }
+        }
     }
 }
+::placeholder {
+    color: $white;
+    opacity: 1; /* Firefox */
+  }
