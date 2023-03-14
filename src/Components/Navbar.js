@@ -26,7 +26,7 @@ export default function Navbar() {
     // toggle class active on state
     <nav className={`nav ${actve?'active':''}`}>
       {/* button to handle click , set content on state*/}
-      <button onClick={handleClick}>{actve?<FontAwesomeIcon icon={faXmark}/>:<FontAwesomeIcon icon={faBars}/>}</button>
+      <button onClick={handleClick}>{actve?<FontAwesomeIcon fill={'#dadada'} icon={faXmark}/>:<FontAwesomeIcon fill={'#dadada'} icon={faBars}/>}</button>
       <ul> 
         {/* custom Links component*/}
         <Links links={links}/>

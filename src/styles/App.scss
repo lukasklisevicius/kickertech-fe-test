@@ -8,26 +8,42 @@
     flex-direction: row;
     gap:5%;
     padding: 5%;
+    color: $white;
 }
 
 /* width */
-::-webkit-scrollbar {
+html::-webkit-scrollbar {
     width: 10px;
   }
   
   /* Track */
-  ::-webkit-scrollbar-track {
-    background: $dark3; 
-    border-radius: 0 0 10px 0;
+  html::-webkit-scrollbar-track {
+    background: $dark; 
   }
    
   /* Handle */
-  ::-webkit-scrollbar-thumb {
-    background: $dark2; 
+  html::-webkit-scrollbar-thumb {
+    background: $dark1; 
     border-radius: 5px;
   }
   
   /* Handle on hover */
-  ::-webkit-scrollbar-thumb:hover {
+  html::-webkit-scrollbar-thumb:hover {
     background: $light; 
+  }
+
+  @media screen and (max-width: 1200px){
+    .container{
+      flex-direction: column;
+      
+
+    }
+  }
+  @media screen and (max-width: 640px){
+    .container{
+      margin-top: 100px;
+      flex-direction: column;
+      
+
+    }
   }
