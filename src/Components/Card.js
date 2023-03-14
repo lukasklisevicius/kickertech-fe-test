@@ -1,6 +1,21 @@
 import '../styles/Card.scss';
+import { useState } from 'react';
 
 const Card = () => {
+    const [comments,setComments] = useState([])
+    const [newComment,setNewComment] = useState('')
+    
+    const handleSubmit = (e) =>{
+        e.preventDefault()
+        if(newComment.trim() !== ''){
+            setComments([...comments,newComment])
+            setNewComment('')
+        }
+    }
+    const handleChange = (e) =>{
+        setNewComment(e.target.value)
+    }
+
     return(
     <div className="card">
         <div className='top'>
@@ -12,8 +27,14 @@ const Card = () => {
             </div>
         </div>
         <div className='bottom'>
-            <Form />
+            <form onSubmit={handleSubmit}>
+                <input type='text' value={newComment} onChange={handleChange} placeholder='Placeholder...'></input>
+                <button type='submit'>submit</button>
+            </form>
             <div className='comments'>
+                {comments.map((comment, idx)=>(
+                    <Comment key={idx} header={'Lorem Ipsum'} text={comment}/>
+                ))}
                 <Comment header={'Lorem Ipsum'} text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'}/>
                 <Comment header={'Lorem Ipsum'} text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'}/>
                 <Comment header={'Lorem Ipsum'} text={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud'}/>
@@ -28,15 +49,6 @@ const Card = () => {
 }
 
 export default Card
-
-const Form = () =>{
-    return(
-    <form>
-        <input type='text' placeholder='Placeholder...'></input>
-        <button type='submit'>submit</button>
-    </form>
-    )
-}
 
 const Comment = (props) =>{
     return(
